@@ -3,7 +3,7 @@
 struct node {
     int data;          
     struct node *next; 
-}*start;
+}*s;
 
 
 void createList(int n);
@@ -42,7 +42,7 @@ void createList(int n)
 
     start = (struct node *)malloc(sizeof(struct node));
 
-    if(start == NULL)
+    if(s == NULL)
     {
         printf("Unable to allocate memory.");
     }
@@ -51,10 +51,10 @@ void createList(int n)
         printf("Enter the data of node 1: ");
         scanf("%d", &data);
 
-        start->data = data; 
-        start->next = NULL; 
+        s->data = data; 
+        s->next = NULL; 
 
-        temp = start;
+        temp = s;
 
         
         for(i=2; i<=n; i++)
@@ -96,8 +96,8 @@ void insertNodeAtBeginning(int data)
     else
     {
         newNode->data = data; 
-        newNode->next = start; 
-        start = newNode;          
+        newNode->next = s; 
+        s = newNode;          
 
         printf("DATA INSERTED SUCCESSFULLY\n");
     }
@@ -107,7 +107,8 @@ void insertNodeAtBeginning(int data)
 
 void insertNodeAtEnd(int data)
 {
-	struct node*a=start,*b;
+	struct node*a=s;
+	struct node*b;
 	
 	b=(struct node*)malloc(sizeof(struct node));
 	if(a==NULL)
@@ -125,13 +126,13 @@ void insertNodeAtEnd(int data)
 void displayList()
 {
     struct node *temp;
-    if(start == NULL)
+    if(s == NULL)
     {
         printf("List is empty.");
     }
     else
     {
-        temp = start;
+        temp = s;
         while(temp != NULL)
         {
             printf("Data = %d\n", temp->data);
