@@ -40,7 +40,7 @@ void createList(int n)
     struct node *newNode, *temp;
     int data, i;
 
-    start = (struct node *)malloc(sizeof(struct node));
+    s = (struct node *)malloc(sizeof(struct node));
 
     if(s == NULL)
     {
