@@ -37,17 +37,17 @@ int main()
 	}
 	int res[3][size];
 	for(int i=0;i<3;i++)
-	{
-		for(int j=0;j<size;j++)
-		{
-			if(mat[i][j]!=0)
-			{
-				res[0][i]=i;
-				res[1][i]=j;
-				res[2][i]=mat[i][j];
-			}
-		}
-	}
+	// Making of new matrix 
+    int k = 0; 
+    for (int i = 0; i < 4; i++) 
+        for (int j = 0; j < 5; j++) 
+            if (mat[i][j] != 0) 
+            { 
+                res[0][k] = i; 
+                res[1][k] = j; 
+                res[2][k] = mat[i][j]; 
+                k++; 
+            } 
 	cout<<"\n\tThe matrix is: \n\n";
 	for(int i=0;i<3;i++)
 	{
